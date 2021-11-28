@@ -10,7 +10,8 @@ set(HEADER_FILES
     weight.hpp)
 
 set(SOURCE_FILES
-    weight.cpp)
+    #weight.cpp
+)
 
 #set(UNIT_TEST_FILES
 #   TestPerformance.cpp)
