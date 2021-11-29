@@ -48,18 +48,10 @@ namespace usu
         T w(lhs.count() * scaler);
         return w;
     }
-    // template <typename T>
-    // T operator=()
-
     template <typename T, typename S>
     T weight_cast(S oldweight)
     {
         T t;
-        // std::cout << "oldweight count: " << oldweight.count()
-        //           << " numerator: " << oldweight.getRatio().num * t.getRatio().den
-        //           << " denominator: " << oldweight.getRatio().den * t.getRatio().num << std::endl;
-        // auto newCount = oldweight.count() * oldweight.getRatio().num * t.getRatio().den / (oldweight.getRatio().den * t.getRatio().num);
-        // std::cout << "new count: " << newCount << std::endl;
         T newWeight(static_cast<double>(oldweight.count()) * oldweight.getRatio().num * t.getRatio().den / (oldweight.getRatio().den * t.getRatio().num));
         return newWeight;
     }
@@ -69,4 +61,17 @@ namespace usu
     using ounce = weight<std::ratio<2834952, 100000>, double>;
     using ton = weight<std::ratio<9071847, 10>, double>;
     using pound = weight<std::ratio<4535924, 10000>, double>;
+    template <typename T, typename R>
+    bool operator==(const T& lhs, const R& rhs)
+    {
+
+        std::cout << "w1 count before: " << lhs.count() << " w2 count before: " << rhs.count() << std::endl;
+        auto w1 = weight_cast<weight<std::ratio<1, 1>, double>>(lhs);
+        auto w2 = weight_cast<weight<std::ratio<1, 1>, double>>(rhs);
+        std::cout << "w1 count: " << w1.count() << "w2 count: " << w2.count() << std::endl;
+        // std::cout << ""
+        // auto result = std::sqrt(std::pow(static_cast<double>(w2.count() - w1.count()), 2.0));
+        // std::cout << "result: " << result << std::endl;
+        return (w1.count() == w2.count());
+    }
 } // namespace usu

@@ -145,24 +145,24 @@ TEST(Weight_Cast, CanCastToLargerUnitWithoutPrecisionLossDifferentStorageTypes)
     EXPECT_NEAR(3.25, result.count(), kEpsilon);
 }
 
-// TEST(Logical_Operators, EqualityInequality)
-// {
-//     SmallWeight a(1);
-//     SmallWeight b(1);
-//     SmallWeight c(2);
-//     BigWeight d(1);
-//     BigWeight e(2);
+TEST(Logical_Operators, EqualityInequality)
+{
+    SmallWeight a(1);
+    SmallWeight b(1);
+    SmallWeight c(2);
+    BigWeight d(1);
+    BigWeight e(2);
 
-//     EXPECT_EQ(a == b, true);
-//     EXPECT_EQ(a == d, false);
-//     EXPECT_EQ(a == c, false);
-//     EXPECT_EQ(a == e, false);
+    EXPECT_EQ(a == b, true);
+    EXPECT_EQ(a == d, false);
+    EXPECT_EQ(a == c, false);
+    EXPECT_EQ(a == e, false);
 
-//     EXPECT_EQ(a != b, false);
-//     EXPECT_EQ(a != d, true);
-//     EXPECT_EQ(a != c, true);
-//     EXPECT_EQ(a != e, true);
-// }
+    // EXPECT_EQ(a != b, false);
+    // EXPECT_EQ(a != d, true);
+    // EXPECT_EQ(a != c, true);
+    // EXPECT_EQ(a != e, true);
+}
 
 // TEST(Logical_Operators, LessThanLessThanEqual)
 // {
