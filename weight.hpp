@@ -1,4 +1,5 @@
 #include <cmath>
+#include <iostream>
 #include <ratio>
 namespace usu
 {
@@ -29,42 +30,6 @@ namespace usu
         {
             return m_ratio;
         }
-        // conversion getRatio()
-        // {
-        //     return T;
-        // }
-        // template <typename S>
-        // weight& operator=(S s)
-        // {
-        //     if (this != s)
-        //     {
-        //         m_count = s.m_count;
-        //         weightRatio = s.weightRatio;
-        //     }
-        //     return *this;
-        // }
-
-        // T getConversion() const
-        // {
-        //     return conversion;
-        // }
-        // template <typename T>
-        // T xtoy(T x, unsigned int y)
-        // {
-        //     T result = 1;
-        //     for (decltype(y) i = 0; i < y; i++)
-        //     {
-        //         result *= x;
-        //     }
-        //     return result;
-        // }
-        // template <typename S>
-        // weight operator*(S s)
-        // {
-        //     weight w(s * m_count);
-        //  operator*(unsigned int index);
-        //     return weight;
-        // }
 
       private:
         R m_count;
@@ -90,8 +55,12 @@ namespace usu
     T weight_cast(S oldweight)
     {
         T t;
-        T newWeight(oldweight.count() * (oldweight.getRatio().num * t.getRatio().den / (oldweight.getRatio().den * t.getRatio().num)));
-        // ToWeight newWeight(static_cast<double>(w.number) * w.weightRatio.num * t.weightRatio.den / (w.weightRatio.den * t.weightRatio.num));
+        // std::cout << "oldweight count: " << oldweight.count()
+        //           << " numerator: " << oldweight.getRatio().num * t.getRatio().den
+        //           << " denominator: " << oldweight.getRatio().den * t.getRatio().num << std::endl;
+        // auto newCount = oldweight.count() * oldweight.getRatio().num * t.getRatio().den / (oldweight.getRatio().den * t.getRatio().num);
+        // std::cout << "new count: " << newCount << std::endl;
+        T newWeight(static_cast<double>(oldweight.count()) * oldweight.getRatio().num * t.getRatio().den / (oldweight.getRatio().den * t.getRatio().num));
         return newWeight;
     }
     using microgram = weight<std::ratio<1, 100000>, double>;

@@ -95,55 +95,55 @@ TEST(Weight_Cast, CanDoIdentityCast)
     EXPECT_EQ(5u, result2.count());
 }
 
-// TEST(Weight_Cast, CanCastToSmallerUnit)
-// {
-//     BigWeight bigWeight(15);
+TEST(Weight_Cast, CanCastToSmallerUnit)
+{
+    BigWeight bigWeight(15);
 
-//     auto result = usu::weight_cast<SmallWeight>(bigWeight);
+    auto result = usu::weight_cast<SmallWeight>(bigWeight);
 
-//     EXPECT_EQ(15u, bigWeight.count());
-//     EXPECT_EQ(180u, result.count());
-// }
+    EXPECT_EQ(15u, bigWeight.count());
+    EXPECT_EQ(180u, result.count());
+}
 
-// TEST(Weight_Cast, CanCastToLargerUnit)
-// {
-//     SmallWeight smallWeight(24);
+TEST(Weight_Cast, CanCastToLargerUnit)
+{
+    SmallWeight smallWeight(24);
 
-//     auto result = usu::weight_cast<BigWeight>(smallWeight);
+    auto result = usu::weight_cast<BigWeight>(smallWeight);
 
-//     EXPECT_EQ(24u, smallWeight.count());
-//     EXPECT_EQ(2u, result.count());
-// }
+    EXPECT_EQ(24u, smallWeight.count());
+    EXPECT_EQ(2u, result.count());
+}
 
-// TEST(Weight_Cast, CanCastToLargerUnitWithPrecisionLoss)
-// {
-//     SmallWeight smallWeight(39);
+TEST(Weight_Cast, CanCastToLargerUnitWithPrecisionLoss)
+{
+    SmallWeight smallWeight(39);
 
-//     auto result = usu::weight_cast<BigWeight>(smallWeight);
+    auto result = usu::weight_cast<BigWeight>(smallWeight);
 
-//     EXPECT_EQ(39u, smallWeight.count());
-//     EXPECT_EQ(3u, result.count());
-// }
+    EXPECT_EQ(39u, smallWeight.count());
+    EXPECT_EQ(3u, result.count());
+}
 
-// TEST(Weight_Cast, CanCastToLargerUnitWithoutPrecisionLoss)
-// {
-//     usu::weight<std::ratio<1, 3>, double> smallWeight(39);
+TEST(Weight_Cast, CanCastToLargerUnitWithoutPrecisionLoss)
+{
+    usu::weight<std::ratio<1, 3>, double> smallWeight(39);
 
-//     auto result = usu::weight_cast<usu::weight<std::ratio<4, 1>, double>>(smallWeight);
+    auto result = usu::weight_cast<usu::weight<std::ratio<4, 1>, double>>(smallWeight);
 
-//     EXPECT_EQ(39u, smallWeight.count());
-//     EXPECT_NEAR(3.25, result.count(), kEpsilon);
-// }
+    EXPECT_EQ(39u, smallWeight.count());
+    EXPECT_NEAR(3.25, result.count(), kEpsilon);
+}
 
-// TEST(Weight_Cast, CanCastToLargerUnitWithoutPrecisionLossDifferentStorageTypes)
-// {
-//     usu::weight<std::ratio<1, 3>, std::uint32_t> smallWeight(39);
+TEST(Weight_Cast, CanCastToLargerUnitWithoutPrecisionLossDifferentStorageTypes)
+{
+    usu::weight<std::ratio<1, 3>, std::uint32_t> smallWeight(39);
 
-//     auto result = usu::weight_cast<usu::weight<std::ratio<4, 1>, double>>(smallWeight);
+    auto result = usu::weight_cast<usu::weight<std::ratio<4, 1>, double>>(smallWeight);
 
-//     EXPECT_EQ(39u, smallWeight.count());
-//     EXPECT_NEAR(3.25, result.count(), kEpsilon);
-// }
+    EXPECT_EQ(39u, smallWeight.count());
+    EXPECT_NEAR(3.25, result.count(), kEpsilon);
+}
 
 // TEST(Logical_Operators, EqualityInequality)
 // {
