@@ -55,27 +55,28 @@ int main()
         // std::cout << " ==> grams: " << usu::weight_cast<usu::gram>(c).count() << std::endl;
     }
 
-    // {
-    //     usu::pound a(1);
-    //     usu::pound b(0.5);
-    //     usu::pound c = a - b;
-    //     std::cout << std::setprecision(2);
-    //     std::cout << "(pound - pound) : " << a.count() << " - " << b.count() << " = " << c.count();
-    //     std::cout << " ==> grams: " << usu::weight_cast<usu::gram>(c).count() << std::endl;
-    // }
+    {
+        usu::pound a(1);
+        usu::pound b(0.5);
+        usu::pound c = a - b;
+        std::cout << std::setprecision(2);
+        std::cout << "(pound - pound) : " << a.count() << " - " << b.count() << " = " << c.count();
+        // std::cout << " ==> grams: " << usu::weight_cast<usu::gram>(c).count() << std::endl;
+    }
 
-    // {
-    //     usu::pound a(1);
-    //     usu::pound b = a * 2.2;
-    //     usu::pound c = 3.2 * a;
-    //     std::cout << std::setprecision(2);
-    //     std::cout << "(pound * scalar) : " << a.count() << " * 2.2 "
-    //               << " = " << b.count();
-    //     std::cout << " ==> grams: " << usu::weight_cast<usu::gram>(b).count() << std::endl;
+    {
+        usu::pound a(1);
+        usu::pound b = a * 2.2;
+        usu::pound c = 3.2 * a;
+        std::cout << std::setprecision(2);
+        std::cout << "(pound * scalar) : " << a.count() << " * 2.2 "
+                  << " = " << b.count();
 
-    //     std::cout << "(scalar * pound) : 3.2 * " << a.count() << " = " << c.count();
-    //     std::cout << " ==> grams: " << usu::weight_cast<usu::gram>(c).count() << std::endl;
-    // }
+        // std::cout << " ==> grams: " << usu::weight_cast<usu::gram>(b).count() << std::endl;
+
+        // std::cout << "(scalar * pound) : 3.2 * " << a.count() << " = " << c.count();
+        // std::cout << " ==> grams: " << usu::weight_cast<usu::gram>(c).count() << std::endl;
+    }
 
     // std::cout << std::endl
     //           << "--- Logical Operator Overloading ---" << std::endl;

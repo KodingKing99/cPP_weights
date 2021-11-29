@@ -1,84 +1,84 @@
-// #include "weight.hpp"
+#include "weight.hpp"
 
-// #include "gtest/gtest.h"
-// #include <cstdint>
-// #include <ratio>
+#include "gtest/gtest.h"
+#include <cstdint>
+#include <ratio>
 
-// constexpr auto kEpsilon = 1E-6;
+constexpr auto kEpsilon = 1E-6;
 
-// using TestWeight = usu::weight<std::ratio<2, 1>, std::uint32_t>;
-// using BigWeight = usu::weight<std::ratio<4, 1>, std::uint32_t>;
-// using SmallWeight = usu::weight<std::ratio<1, 3>, std::uint32_t>;
+using TestWeight = usu::weight<std::ratio<2, 1>, std::uint32_t>;
+using BigWeight = usu::weight<std::ratio<4, 1>, std::uint32_t>;
+using SmallWeight = usu::weight<std::ratio<1, 3>, std::uint32_t>;
 
-// int main(int argc, char* argv[])
-// {
-//     testing::InitGoogleTest(&argc, argv);
-//     return RUN_ALL_TESTS();
-// }
+int main(int argc, char* argv[])
+{
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
 
-// TEST(Weight_Constructor, DefaultInitializesCountToZero)
-// {
-//     TestWeight weight;
+TEST(Weight_Constructor, DefaultInitializesCountToZero)
+{
+    TestWeight weight;
 
-//     EXPECT_EQ(0u, weight.count());
-// }
+    EXPECT_EQ(0u, weight.count());
+}
 
-// TEST(Weight_Constructor, OverloadedConstructorInitializesCount)
-// {
-//     TestWeight weight1(12);
-//     EXPECT_EQ(12u, weight1.count());
+TEST(Weight_Constructor, OverloadedConstructorInitializesCount)
+{
+    TestWeight weight1(12);
+    EXPECT_EQ(12u, weight1.count());
 
-//     TestWeight weight2(44);
-//     EXPECT_EQ(44u, weight2.count());
-// }
+    TestWeight weight2(44);
+    EXPECT_EQ(44u, weight2.count());
+}
 
-// TEST(Weight_Operator, CanAddOtherWeight)
-// {
-//     TestWeight weight1(11);
-//     TestWeight weight2(4);
+TEST(Weight_Operator, CanAddOtherWeight)
+{
+    TestWeight weight1(11);
+    TestWeight weight2(4);
 
-//     TestWeight result = weight1 + weight2;
-//     EXPECT_EQ(15u, result.count());
-//     EXPECT_EQ(11u, weight1.count());
-//     EXPECT_EQ(4u, weight2.count());
+    TestWeight result = weight1 + weight2;
+    EXPECT_EQ(15u, result.count());
+    EXPECT_EQ(11u, weight1.count());
+    EXPECT_EQ(4u, weight2.count());
 
-//     result = weight1 + TestWeight(0);
-//     EXPECT_EQ(11u, result.count());
-//     EXPECT_EQ(11u, weight1.count());
-// }
+    result = weight1 + TestWeight(0);
+    EXPECT_EQ(11u, result.count());
+    EXPECT_EQ(11u, weight1.count());
+}
 
-// TEST(Weight_Operator, CanSubtractOtherWeight)
-// {
-//     TestWeight weight1(11);
-//     TestWeight weight2(4);
+TEST(Weight_Operator, CanSubtractOtherWeight)
+{
+    TestWeight weight1(11);
+    TestWeight weight2(4);
 
-//     TestWeight result = weight1 - weight2;
-//     EXPECT_EQ(7u, result.count());
-//     EXPECT_EQ(11u, weight1.count());
-//     EXPECT_EQ(4u, weight2.count());
+    TestWeight result = weight1 - weight2;
+    EXPECT_EQ(7u, result.count());
+    EXPECT_EQ(11u, weight1.count());
+    EXPECT_EQ(4u, weight2.count());
 
-//     result = weight1 - TestWeight(0);
-//     EXPECT_EQ(11u, result.count());
-//     EXPECT_EQ(11u, weight1.count());
-// }
+    result = weight1 - TestWeight(0);
+    EXPECT_EQ(11u, result.count());
+    EXPECT_EQ(11u, weight1.count());
+}
 
-// TEST(Weight_Operator, CanMultiplyScalarWeight)
-// {
-//     TestWeight myWeight(14);
+TEST(Weight_Operator, CanMultiplyScalarWeight)
+{
+    TestWeight myWeight(14);
 
-//     TestWeight result = 3 * myWeight;
-//     EXPECT_EQ(3u * 14u, result.count());
-//     EXPECT_EQ(14u, myWeight.count());
-// }
+    TestWeight result = 3 * myWeight;
+    EXPECT_EQ(3u * 14u, result.count());
+    EXPECT_EQ(14u, myWeight.count());
+}
 
-// TEST(Weight_Operator, CanMultiplyWeightScalar)
-// {
-//     TestWeight myWeight(4);
+TEST(Weight_Operator, CanMultiplyWeightScalar)
+{
+    TestWeight myWeight(4);
 
-//     TestWeight result = myWeight * 5;
-//     EXPECT_EQ(4u * 5u, result.count());
-//     EXPECT_EQ(4u, myWeight.count());
-// }
+    TestWeight result = myWeight * 5;
+    EXPECT_EQ(4u * 5u, result.count());
+    EXPECT_EQ(4u, myWeight.count());
+}
 
 // TEST(Weight_Cast, CanDoIdentityCast)
 // {
