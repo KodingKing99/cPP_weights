@@ -80,20 +80,20 @@ TEST(Weight_Operator, CanMultiplyWeightScalar)
     EXPECT_EQ(4u, myWeight.count());
 }
 
-// TEST(Weight_Cast, CanDoIdentityCast)
-// {
-//     usu::weight<std::ratio<5, 1>> weight1(10); // 50 units
-//     decltype(weight1) result1 = usu::weight_cast<decltype(weight1)>(weight1);
+TEST(Weight_Cast, CanDoIdentityCast)
+{
+    usu::weight<std::ratio<5, 1>> weight1(10); // 50 units
+    decltype(weight1) result1 = usu::weight_cast<decltype(weight1)>(weight1);
 
-//     EXPECT_EQ(10u, weight1.count());
-//     EXPECT_EQ(10u, result1.count());
+    EXPECT_EQ(10u, weight1.count());
+    EXPECT_EQ(10u, result1.count());
 
-//     usu::weight<std::ratio<1, 2>> weight2(5); // 2.5 units
-//     decltype(weight2) result2 = usu::weight_cast<decltype(weight2)>(weight2);
+    usu::weight<std::ratio<1, 2>> weight2(5); // 2.5 units
+    decltype(weight2) result2 = usu::weight_cast<decltype(weight2)>(weight2);
 
-//     EXPECT_EQ(5u, weight2.count());
-//     EXPECT_EQ(5u, result2.count());
-// }
+    EXPECT_EQ(5u, weight2.count());
+    EXPECT_EQ(5u, result2.count());
+}
 
 // TEST(Weight_Cast, CanCastToSmallerUnit)
 // {

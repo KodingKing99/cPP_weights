@@ -52,7 +52,7 @@ int main()
         usu::pound c = a + b;
         std::cout << std::setprecision(2);
         std::cout << "(pound + pound) : " << a.count() << " + " << b.count() << " = " << c.count();
-        // std::cout << " ==> grams: " << usu::weight_cast<usu::gram>(c).count() << std::endl;
+        std::cout << " ==> grams: " << usu::weight_cast<usu::gram>(c).count() << std::endl;
     }
 
     {
