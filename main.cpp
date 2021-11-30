@@ -78,43 +78,43 @@ int main()
         std::cout << " ==> grams: " << usu::weight_cast<usu::gram>(c).count() << std::endl;
     }
 
-    // std::cout << std::endl
-    //           << "--- Logical Operator Overloading ---" << std::endl;
-    // {
-    //     usu::ounce a(16);
-    //     usu::pound b(1);
-    //     usu::kilogram c(4);
-    //     usu::kilogram d(1);
+    std::cout << std::endl
+              << "--- Logical Operator Overloading ---" << std::endl;
+    {
+        usu::ounce a(16);
+        usu::pound b(1);
+        usu::kilogram c(4);
+        usu::kilogram d(1);
 
-    //     std::cout << a.count() << " oz == " << b.count() << " lb : " << ((a == b) ? "true" : "false") << std::endl;
-    //     std::cout << a.count() << " oz == " << c.count() << " kg : " << ((a == c) ? "true" : "false") << std::endl;
-    //     std::cout << c.count() << " kg == " << d.count() << " kg : " << ((c == d) ? "true" : "false") << std::endl;
+        std::cout << a.count() << " oz == " << b.count() << " lb : " << ((a == b) ? "true" : "false") << std::endl;
+        std::cout << a.count() << " oz == " << c.count() << " kg : " << ((a == c) ? "true" : "false") << std::endl;
+        std::cout << c.count() << " kg == " << d.count() << " kg : " << ((c == d) ? "true" : "false") << std::endl;
 
-    //     std::cout << std::endl;
-    //     std::cout << a.count() << " oz != " << b.count() << " lb : " << ((a != b) ? "true" : "false") << std::endl;
-    //     std::cout << a.count() << " oz != " << c.count() << " kg : " << ((a != c) ? "true" : "false") << std::endl;
-    //     std::cout << c.count() << " kg != " << d.count() << " kg : " << ((c != d) ? "true" : "false") << std::endl;
+        std::cout << std::endl;
+        std::cout << a.count() << " oz != " << b.count() << " lb : " << ((a != b) ? "true" : "false") << std::endl;
+        std::cout << a.count() << " oz != " << c.count() << " kg : " << ((a != c) ? "true" : "false") << std::endl;
+        std::cout << c.count() << " kg != " << d.count() << " kg : " << ((c != d) ? "true" : "false") << std::endl;
 
-    //     std::cout << std::endl;
-    //     std::cout << a.count() << " oz < " << b.count() << " lb : " << ((a < b) ? "true" : "false") << std::endl;
-    //     std::cout << a.count() << " oz < " << c.count() << " kg : " << ((a < c) ? "true" : "false") << std::endl;
-    //     std::cout << c.count() << " kg < " << d.count() << " kg : " << ((c < d) ? "true" : "false") << std::endl;
+        std::cout << std::endl;
+        std::cout << a.count() << " oz < " << b.count() << " lb : " << ((a < b) ? "true" : "false") << std::endl;
+        std::cout << a.count() << " oz < " << c.count() << " kg : " << ((a < c) ? "true" : "false") << std::endl;
+        std::cout << c.count() << " kg < " << d.count() << " kg : " << ((c < d) ? "true" : "false") << std::endl;
 
-    //     std::cout << std::endl;
-    //     std::cout << a.count() << " oz > " << b.count() << " lb : " << ((a > b) ? "true" : "false") << std::endl;
-    //     std::cout << a.count() << " oz > " << c.count() << " kg : " << ((a > c) ? "true" : "false") << std::endl;
-    //     std::cout << c.count() << " kg > " << d.count() << " kg : " << ((c > d) ? "true" : "false") << std::endl;
+        std::cout << std::endl;
+        std::cout << a.count() << " oz > " << b.count() << " lb : " << ((a > b) ? "true" : "false") << std::endl;
+        std::cout << a.count() << " oz > " << c.count() << " kg : " << ((a > c) ? "true" : "false") << std::endl;
+        std::cout << c.count() << " kg > " << d.count() << " kg : " << ((c > d) ? "true" : "false") << std::endl;
 
-    //     std::cout << std::endl;
-    //     std::cout << a.count() << " oz <= " << b.count() << " lb : " << ((a <= b) ? "true" : "false") << std::endl;
-    //     std::cout << a.count() << " oz <= " << c.count() << " kg : " << ((a <= c) ? "true" : "false") << std::endl;
-    //     std::cout << c.count() << " kg <= " << d.count() << " kg : " << ((c <= d) ? "true" : "false") << std::endl;
+        std::cout << std::endl;
+        std::cout << a.count() << " oz <= " << b.count() << " lb : " << ((a <= b) ? "true" : "false") << std::endl;
+        std::cout << a.count() << " oz <= " << c.count() << " kg : " << ((a <= c) ? "true" : "false") << std::endl;
+        std::cout << c.count() << " kg <= " << d.count() << " kg : " << ((c <= d) ? "true" : "false") << std::endl;
 
-    //     std::cout << std::endl;
-    //     std::cout << a.count() << " oz >= " << b.count() << " lb : " << ((a >= b) ? "true" : "false") << std::endl;
-    //     std::cout << a.count() << " oz >= " << c.count() << " kg : " << ((a >= c) ? "true" : "false") << std::endl;
-    //     std::cout << c.count() << " kg >= " << d.count() << " kg : " << ((c >= d) ? "true" : "false") << std::endl;
-    // }
+        std::cout << std::endl;
+        std::cout << a.count() << " oz >= " << b.count() << " lb : " << ((a >= b) ? "true" : "false") << std::endl;
+        std::cout << a.count() << " oz >= " << c.count() << " kg : " << ((a >= c) ? "true" : "false") << std::endl;
+        std::cout << c.count() << " kg >= " << d.count() << " kg : " << ((c >= d) ? "true" : "false") << std::endl;
+    }
 
     return 0;
 }

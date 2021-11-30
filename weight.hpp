@@ -6,9 +6,9 @@ namespace usu
     template <typename T = std::ratio<1, 1>, typename R = std::uint64_t>
     class weight
     {
-        using conversion = T;
 
       public:
+        using conversion = T;
         weight() :
             m_count(0) {}
         weight(R newCount) :
@@ -26,10 +26,7 @@ namespace usu
             weight w(m_count - p.count());
             return w;
         }
-        T getRatio() const
-        {
-            return m_ratio;
-        }
+        T getRatio() const { return m_ratio; }
 
       private:
         R m_count;
@@ -55,23 +52,58 @@ namespace usu
         T newWeight(static_cast<double>(oldweight.count()) * oldweight.getRatio().num * t.getRatio().den / (oldweight.getRatio().den * t.getRatio().num));
         return newWeight;
     }
-    using microgram = weight<std::ratio<1, 100000>, double>;
-    using gram = weight<>;
+    using microgram = weight<std::ratio<1, 1000000>, double>;
+    using gram = weight<std::ratio<1, 1>, double>;
     using kilogram = weight<std::ratio<1000, 1>, double>;
-    using ounce = weight<std::ratio<2834952, 100000>, double>;
-    using ton = weight<std::ratio<9071847, 10>, double>;
-    using pound = weight<std::ratio<4535924, 10000>, double>;
+    using ounce = weight<std::ratio<28349523125, 1000000000>, double>;
+    using ton = weight<std::ratio<90718474, 100>, double>;
+    using pound = weight<std::ratio<45359237, 100000>, double>;
     template <typename T, typename R>
     bool operator==(const T& lhs, const R& rhs)
     {
 
-        std::cout << "w1 count before: " << lhs.count() << " w2 count before: " << rhs.count() << std::endl;
         auto w1 = weight_cast<weight<std::ratio<1, 1>, double>>(lhs);
         auto w2 = weight_cast<weight<std::ratio<1, 1>, double>>(rhs);
-        std::cout << "w1 count: " << w1.count() << "w2 count: " << w2.count() << std::endl;
-        // std::cout << ""
-        // auto result = std::sqrt(std::pow(static_cast<double>(w2.count() - w1.count()), 2.0));
-        // std::cout << "result: " << result << std::endl;
         return (w1.count() == w2.count());
+    }
+    template <typename T, typename R>
+    bool operator!=(const T& lhs, const R& rhs)
+    {
+
+        auto w1 = weight_cast<weight<std::ratio<1, 1>, double>>(lhs);
+        auto w2 = weight_cast<weight<std::ratio<1, 1>, double>>(rhs);
+        return (w1.count() != w2.count());
+    }
+    template <typename T, typename R>
+    bool operator<(const T& lhs, const R& rhs)
+    {
+
+        auto w1 = weight_cast<weight<std::ratio<1, 1>, double>>(lhs);
+        auto w2 = weight_cast<weight<std::ratio<1, 1>, double>>(rhs);
+        return (w1.count() < w2.count());
+    }
+    template <typename T, typename R>
+    bool operator<=(const T& lhs, const R& rhs)
+    {
+
+        auto w1 = weight_cast<weight<std::ratio<1, 1>, double>>(lhs);
+        auto w2 = weight_cast<weight<std::ratio<1, 1>, double>>(rhs);
+        return (w1.count() <= w2.count());
+    }
+    template <typename T, typename R>
+    bool operator>(const T& lhs, const R& rhs)
+    {
+
+        auto w1 = weight_cast<weight<std::ratio<1, 1>, double>>(lhs);
+        auto w2 = weight_cast<weight<std::ratio<1, 1>, double>>(rhs);
+        return (w1.count() > w2.count());
+    }
+    template <typename T, typename R>
+    bool operator>=(const T& lhs, const R& rhs)
+    {
+
+        auto w1 = weight_cast<weight<std::ratio<1, 1>, double>>(lhs);
+        auto w2 = weight_cast<weight<std::ratio<1, 1>, double>>(rhs);
+        return (w1.count() >= w2.count());
     }
 } // namespace usu

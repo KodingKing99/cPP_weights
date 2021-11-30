@@ -158,59 +158,59 @@ TEST(Logical_Operators, EqualityInequality)
     EXPECT_EQ(a == c, false);
     EXPECT_EQ(a == e, false);
 
-    // EXPECT_EQ(a != b, false);
-    // EXPECT_EQ(a != d, true);
-    // EXPECT_EQ(a != c, true);
-    // EXPECT_EQ(a != e, true);
+    EXPECT_EQ(a != b, false);
+    EXPECT_EQ(a != d, true);
+    EXPECT_EQ(a != c, true);
+    EXPECT_EQ(a != e, true);
 }
 
-// TEST(Logical_Operators, LessThanLessThanEqual)
-// {
-//     SmallWeight a(1);
-//     SmallWeight b(1);
-//     SmallWeight c(2);
-//     BigWeight d(1);
+TEST(Logical_Operators, LessThanLessThanEqual)
+{
+    SmallWeight a(1);
+    SmallWeight b(1);
+    SmallWeight c(2);
+    BigWeight d(1);
 
-//     EXPECT_EQ(a < b, false);
-//     EXPECT_EQ(a < d, true);
-//     EXPECT_EQ(a < c, true);
-//     EXPECT_EQ(c < a, false);
+    EXPECT_EQ(a < b, false);
+    EXPECT_EQ(a < d, true);
+    EXPECT_EQ(a < c, true);
+    EXPECT_EQ(c < a, false);
 
-//     EXPECT_EQ(a <= b, true);
-//     EXPECT_EQ(a <= c, true);
-//     EXPECT_EQ(c <= a, false);
-//     EXPECT_EQ(a <= d, true);
-// }
+    EXPECT_EQ(a <= b, true);
+    EXPECT_EQ(a <= c, true);
+    EXPECT_EQ(c <= a, false);
+    EXPECT_EQ(a <= d, true);
+}
 
-// TEST(Logical_Operators, GreaterThanGreaterThanEqual)
-// {
-//     SmallWeight a(1);
-//     SmallWeight b(1);
-//     SmallWeight c(2);
-//     BigWeight d(1);
+TEST(Logical_Operators, GreaterThanGreaterThanEqual)
+{
+    SmallWeight a(1);
+    SmallWeight b(1);
+    SmallWeight c(2);
+    BigWeight d(1);
 
-//     EXPECT_EQ(a > b, false);
-//     EXPECT_EQ(a > d, false);
-//     EXPECT_EQ(a > c, false);
-//     EXPECT_EQ(c > a, true);
+    EXPECT_EQ(a > b, false);
+    EXPECT_EQ(a > d, false);
+    EXPECT_EQ(a > c, false);
+    EXPECT_EQ(c > a, true);
 
-//     EXPECT_EQ(a >= b, true);
-//     EXPECT_EQ(a >= c, false);
-//     EXPECT_EQ(c >= a, true);
-//     EXPECT_EQ(a >= d, false);
-// }
+    EXPECT_EQ(a >= b, true);
+    EXPECT_EQ(a >= c, false);
+    EXPECT_EQ(c >= a, true);
+    EXPECT_EQ(a >= d, false);
+}
 
-// TEST(Weight_Unit, CorrectUnitsDefined)
-// {
-//     EXPECT_EQ(std::micro::num, usu::microgram::conversion::num);
-//     EXPECT_EQ(std::micro::den, usu::microgram::conversion::den);
-//     EXPECT_EQ(usu::gram::conversion::num, usu::gram::conversion::den);
-//     EXPECT_EQ(std::kilo::num, usu::kilogram::conversion::num);
-//     EXPECT_EQ(std::kilo::den, usu::kilogram::conversion::den);
-//     EXPECT_EQ((std::ratio<28349523125, 1000000000>::num), usu::ounce::conversion::num);
-//     EXPECT_EQ((std::ratio<28349523125, 1000000000>::den), usu::ounce::conversion::den);
-//     EXPECT_EQ((std::ratio<45359237, 100000>::num), usu::pound::conversion::num);
-//     EXPECT_EQ((std::ratio<45359237, 100000>::den), usu::pound::conversion::den);
-//     EXPECT_EQ((std::ratio<90718474, 100>::num), usu::ton::conversion::num);
-//     EXPECT_EQ((std::ratio<90718474, 100>::den), usu::ton::conversion::den);
-// }
+TEST(Weight_Unit, CorrectUnitsDefined)
+{
+    EXPECT_EQ(std::micro::num, usu::microgram::conversion::num);
+    EXPECT_EQ(std::micro::den, usu::microgram::conversion::den);
+    EXPECT_EQ(usu::gram::conversion::num, usu::gram::conversion::den);
+    EXPECT_EQ(std::kilo::num, usu::kilogram::conversion::num);
+    EXPECT_EQ(std::kilo::den, usu::kilogram::conversion::den);
+    EXPECT_EQ((std::ratio<28349523125, 1000000000>::num), usu::ounce::conversion::num);
+    EXPECT_EQ((std::ratio<28349523125, 1000000000>::den), usu::ounce::conversion::den);
+    EXPECT_EQ((std::ratio<45359237, 100000>::num), usu::pound::conversion::num);
+    EXPECT_EQ((std::ratio<45359237, 100000>::den), usu::pound::conversion::den);
+    EXPECT_EQ((std::ratio<90718474, 100>::num), usu::ton::conversion::num);
+    EXPECT_EQ((std::ratio<90718474, 100>::den), usu::ton::conversion::den);
+}
