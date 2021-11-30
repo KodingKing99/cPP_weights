@@ -17,13 +17,13 @@ namespace usu
         template <typename S>
         weight operator+(S s)
         {
-            weight w(s.count() + m_count);
+            weight w(static_cast<decltype(s.m_count)>(s.count() + m_count));
             return w;
         }
         template <typename P>
         weight operator-(P p)
         {
-            weight w(m_count - p.count());
+            weight w(static_cast<decltype(p.m_count)>(m_count - p.count()));
             return w;
         }
         T getRatio() const { return m_ratio; }
@@ -36,20 +36,20 @@ namespace usu
     T operator*(double i, const T& s)
     {
         // auto num = s->count();
-        T w(s.count() * i);
+        T w(static_cast<decltype(s.count())>(s.count() * i));
         return w;
     }
     template <typename T>
     T operator*(const T& lhs, double scaler)
     {
-        T w(lhs.count() * scaler);
+        T w(static_cast<decltype(lhs.count())>(lhs.count() * scaler));
         return w;
     }
     template <typename T, typename S>
     T weight_cast(S oldweight)
     {
         T t;
-        T newWeight(static_cast<double>(oldweight.count()) * oldweight.getRatio().num * t.getRatio().den / (oldweight.getRatio().den * t.getRatio().num));
+        T newWeight(static_cast<decltype(t.count())>(static_cast<double>(oldweight.count()) * oldweight.getRatio().num * t.getRatio().den / (oldweight.getRatio().den * t.getRatio().num)));
         return newWeight;
     }
     using microgram = weight<std::ratio<1, 1000000>, double>;
